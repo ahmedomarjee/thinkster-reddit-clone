@@ -1,10 +1,13 @@
 'use strict';
 
+/* global app:true */
+
 var app = angular.module('angNewsApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'firebase'
 ]);
 
 app.config(function ($routeProvider) {
