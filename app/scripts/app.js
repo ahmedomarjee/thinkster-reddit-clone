@@ -8,13 +8,17 @@ var app = angular.module('angNewsApp', [
   'ngSanitize',
   'ngRoute',
   'firebase'
-]);
+]).constant('FIREBASE_URL', 'https://blinding-fire-5206.firebaseIO.com/');
 
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'views/posts.html',
       controller: 'PostsCtrl'
+    })
+    .when('/posts/:postId', {
+      templateUrl: 'views/showpost.html',
+      controller: 'PostViewCtrl'
     })
     .otherwise({
       redirectTo: '/'
